@@ -11,7 +11,6 @@ wikipedia.set_lang("ru")
 def get_wiki(s):
     try:
         result = wikipedia.search(s)
-        print(result)
         page = wikipedia.page(result[0])
         wikitext = page.content[:1000]
         wikimas = wikitext.split('.')
@@ -28,7 +27,6 @@ def get_wiki(s):
         wikitext2 = re.sub('\{[^\{\}]*\}', '', wikitext2)
         return wikitext2
     except Exception as e:
-        print(e)
         return 'Нет Информации'
 
 
